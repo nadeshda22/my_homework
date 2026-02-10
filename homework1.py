@@ -24,31 +24,14 @@ def test_selenium_web_google(driver):
     assert driver.title == "Google"
     assert driver.current_url == url_google
 
+
 @pytest.mark.true
-def test_selenium_web_githab(driver):
-   url_githab = "https://github.com/"
+def test_selenium_web_github(driver):
+    url_githab = "https://github.com/"
 
-   driver.get(url_githab)
+    driver.get(url_githab)
 
-   assert driver.title == "GitHub · Change is constant. GitHub keeps you ahead. · GitHub"
-   assert driver.current_url == url_githab
-
-
-@pytest.mark.false
-def test_selenium_web_google(driver):
-    url_google = "https://www.google.com/"
-
-    driver.get(url_google)
-
-    assert driver.title != "Google"
-    assert driver.current_url != url_google
-
-
-@pytest.mark.false
-def test_selenium_web_githab(driver):
-   url_githab = "https://github.com/"
-
-   driver.get(url_githab)
-
-   assert driver.title != "GitHub · Change is constant. GitHub keeps you ahead. · GitHub"
-   assert driver.current_url != url_githab
+    assert (
+        driver.title == "GitHub · Change is constant. GitHub keeps you ahead. · GitHub"
+    )
+    assert driver.current_url == url_githab
